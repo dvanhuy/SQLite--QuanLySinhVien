@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 vitriupdate = i;
                 bundle.putSerializable("svupdate",arraysv.get(i));
                 add.putExtra("bundle",bundle);
-                getResult.launch(add);
+                getResultupdate.launch(add);
             }
         });
         ImageView updatebutton = findViewById(R.id.imageView5);
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent add = new Intent(MainActivity.this,AddSinhvien.class);
-                getResultupdate.launch(add);
+                getResult.launch(add);
             }
         });
     }

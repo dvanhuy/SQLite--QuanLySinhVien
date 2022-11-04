@@ -26,6 +26,8 @@ public class UpdateSV extends AppCompatActivity {
         Bundle bundle = intent.getBundleExtra("bundle");
         sv = (SinhVien) bundle.getSerializable("svupdate");
 
+        AnhXa();
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,5 +76,10 @@ public class UpdateSV extends AppCompatActivity {
         masv = findViewById(R.id.addmasv);
         tuoisv = findViewById(R.id.addtuoisv);
         lopsv = findViewById(R.id.addlopsv);
+
+        tensv.setText(sv.getMasv());
+        masv.setText(sv.getTensv());
+        tuoisv.setText(String.valueOf(sv.getTuoi()));
+        lopsv.setText(sv.getLop());
     }
 }
