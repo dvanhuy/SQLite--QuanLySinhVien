@@ -25,8 +25,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    SQLiteDatabase database;
-    ListView listsv;
+    SQLiteDatabase database_157;
+    ListView listsv_157;
     ArrayList<SinhVien> arraysv;
     ListViewAdapter listViewAdapter;
     int vitriupdate=-1;
@@ -34,22 +34,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        database = openOrCreateDatabase("quanlysinhvien.db", MODE_PRIVATE, null);
-        if (!isTableExists(database,"sinhvien")){
-            doCreateDB(database);
+        database_157 = openOrCreateDatabase("quanlysinhvien.db", MODE_PRIVATE, null);
+        if (!isTableExists(database_157,"sinhvien")){
+            doCreateDB(database_157);
         }
         initdata();
         listViewAdapter = new ListViewAdapter(this,R.layout.item_sinhvien,arraysv);
-        listsv = findViewById(R.id.listsv);
-        listsv.setAdapter(listViewAdapter);
-        listsv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        listsv_157 = findViewById(R.id.listsv);
+        listsv_157.setAdapter(listViewAdapter);
+        listsv_157.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
                 XoaData(i);
                 return false;
             }
         });
-        listsv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listsv_157.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent add = new Intent(MainActivity.this,UpdateSV.class);
@@ -244,7 +244,7 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
     public void XoaTableSVTheoID(String id){
-        database.delete("sinhvien","masv =?",new String[]{id});
+        database_157.delete("sinhvien","masv =?",new String[]{id});
         //xoa theo
     }
 }
